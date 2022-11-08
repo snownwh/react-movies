@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
 import MovieDetail from "../components/MovieDetail";
+import styles from "./Home.module.css";
 
 function Detail() {
   const [loading, setLoading] = useState(true);
@@ -20,7 +21,9 @@ function Detail() {
   return (
     <div>
       {loading ? (
-        <h1>Loading...</h1>
+        <div className={styles.loader}>
+          <span>Loading...</span>
+        </div>
       ) : (
         <MovieDetail
           title={movieDetail.title}
